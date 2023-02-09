@@ -1,0 +1,25 @@
+spring.profiles.include: diag
+
+
+apiml:
+    service:
+        serviceId: enablerv1sampleapp
+        hostname: localhost
+        port: 10015
+        serviceIpAddress: 127.0.0.1
+        discoveryServiceUrls: https://localhost:10011/eureka/
+
+spring:
+    output:
+        ansi:
+            enabled: always
+
+server:
+    ssl:
+        keyAlias: localhost
+        keyPassword: password
+        keyStore: keystore/localhost/localhost.keystore.p12
+        keyStorePassword: password
+        trustStore: keystore/localhost/localhost.truststore.p12
+        trustStorePassword: password
+        trustStoreType: PKCS12

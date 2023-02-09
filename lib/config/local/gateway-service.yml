@@ -1,0 +1,79 @@
+spring.profiles.include: diag
+apiml:
+    service:
+        hostname: localhost
+        ipAddress: 127.0.0.1
+        port: 10010
+        discoveryServiceUrls: https://localhost:10011/eureka/
+    security:
+        allowTokenRefresh: true
+        webfinger:
+            fileLocation: config/local/webfinger.yml
+        personalAccessToken:
+            enabled: false
+        oAuth:
+            enabled: false
+            clientId:
+            clientSecret:
+            validationUrl:
+        auth:
+            jwt:
+                customAuthHeader:
+            passticket:
+                customUserHeader:
+                customAuthHeader:
+            provider: dummy
+            zosmf:
+                serviceId: mockzosmf  # Replace me with the correct z/OSMF service id
+        ssl:
+            verifySslCertificatesOfServices: true
+        x509:
+            enabled: true
+    banner: console
+
+eureka:
+    client:
+        initialInstanceInfoReplicationIntervalSeconds: 1
+        registryFetchIntervalSeconds: 1
+spring:
+    config:
+        useLegacyProcessing: true
+    output:
+        ansi:
+            enabled: always
+    cache:
+        ehcache:
+            config: classpath:ehcache.xml
+
+server:
+    internal:
+        enabled: true
+        port: 10017
+        ssl:
+            keyAlias: localhost-multi
+            keyStore: keystore/localhost/localhost-multi.keystore.p12
+    ssl:
+        keyAlias: localhost
+        keyPassword: password
+        keyStore: keystore/localhost/localhost.keystore.p12
+        keyStorePassword: password
+        keyStoreType: PKCS12
+        trustStore: keystore/localhost/localhost.truststore.p12
+        trustStorePassword: password
+        trustStoreType: PKCS12
+
+---
+spring:
+    profiles: attls
+
+apiml:
+    service:
+        scheme: http
+        discoveryServiceUrls: http://localhost:10011/eureka/
+    security:
+        saf:
+            urls:
+                authenticate: http://localhost:10013/zss/saf/authenticate
+                verify: http://localhost:10013/zss/saf/verify
+
+

@@ -1,0 +1,24 @@
+spring.profiles.include: diag
+
+apiml:
+    service:
+        hostname: localhost
+        ipAddress: 127.0.0.1
+        port: 10012
+        discoveryServiceUrls: https://localhost2:10021/eureka/,https://localhost:10011/eureka/
+
+spring:
+    output:
+        ansi:
+            enabled: always
+
+server:
+    ssl:
+        keyAlias: localhost-multi
+        keyPassword: password
+        keyStore: keystore/localhost/localhost-multi.keystore.p12
+        keyStorePassword: password
+        keyStoreType: PKCS12
+        trustStore: keystore/localhost/localhost-multi.truststore.p12
+        trustStorePassword: password
+        trustStoreType: PKCS12

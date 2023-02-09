@@ -1,0 +1,62 @@
+dependencies {
+    implementation libraries.gson
+    implementation(libraries.eureka_client) {
+        exclude group: "javax.servlet", module: "servlet-api"
+        exclude group: "com.google.code.gson", module: "gson"
+        exclude group: "org.codehaus.jettison", module: "jettison"
+    }
+    implementation libraries.jettison
+    implementation libraries.netflix_servo
+
+    implementation(libraries.http_client)
+    implementation(libraries.http_core)
+    implementation(libraries.jackson_annotations)
+    implementation(libraries.jackson_databind)
+    implementation(libraries.slf4j_api)
+    implementation(libraries.snakeyaml)
+
+    implementation libraries.apache_commons_codec
+    implementation libraries.apache_commons_lang3
+    implementation libraries.apache_commons_text
+    implementation libraries.xstream
+    implementation libraries.logback_core
+    implementation libraries.logback_classic
+
+    implementation libraries.jsr305
+
+    implementation(libraries.javax_servlet_api)
+
+    compileOnly libraries.lombok
+    annotationProcessor libraries.lombok
+
+    implementation(libraries.eh_cache)
+    implementation(libraries.spring_boot_starter_cache){
+        exclude group: "org.yaml", module: "snakeyaml"
+        exclude group: "org.springframework", module: "spring-core"
+        exclude group: "org.springframework", module: "spring-context"
+        exclude group: "org.springframework", module: "spring-context-support"
+    }
+    testImplementation(libraries.spring_boot_starter_cache) {
+        exclude group: "org.yaml", module: "snakeyaml"
+    }
+    implementation libraries.spring_web
+    implementation libraries.snakeyaml
+    testImplementation libraries.snakeyaml
+    testImplementation(libraries.spring_boot_starter_test)
+    testImplementation libraries.json_smart
+    testImplementation(libraries.eh_cache)
+    testImplementation(libraries.jackson_core)
+    testImplementation(libraries.jackson_databind)
+    testImplementation(libraries.javax_servlet_api)
+    testImplementation(libraries.json_unit_fluent)
+    testImplementation(libraries.json_unit)
+    testImplementation(libraries.hamcrest)
+    testImplementation(libraries.logback_classic)
+    testImplementation(libraries.tomcat_embed_core)
+    testImplementation(libraries.mockito_core)
+    implementation libraries.spring_context
+    implementation libraries.spring_context_support
+    implementation libraries.spring_core
+    testCompileOnly libraries.lombok
+    testAnnotationProcessor libraries.lombok
+}

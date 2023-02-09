@@ -1,0 +1,22 @@
+dependencies {
+    implementation(project(':common-service-core'))
+
+    implementation libraries.jackson_databind
+    implementation libraries.apache_commons_lang3
+    implementation libraries.http_client
+    implementation libraries.http_core
+    implementation libraries.jetty_websocket_client
+
+    compileOnly libraries.spring_boot_starter_web
+    compileOnly libraries.spring_boot_configuration_processor
+    implementation libraries.findbugs
+    compileOnly libraries.lombok
+    annotationProcessor libraries.lombok
+
+    testImplementation libraries.javax_servlet_api
+    testImplementation libraries.spring_boot_starter_test
+    testImplementation libraries.json_smart
+
+    testCompileOnly libraries.lombok
+    testAnnotationProcessor libraries.lombok
+}

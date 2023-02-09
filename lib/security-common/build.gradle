@@ -1,0 +1,38 @@
+dependencies {
+    api project(':apiml-common')
+    api project(':apiml-utility')
+    implementation(libraries.spring_boot_starter_web) {
+        exclude group: "org.yaml", module: "snakeyaml"
+        exclude group: "org.apache.tomcat.embed", module: "tomcat-embed-el"
+    }
+    implementation libraries.tomcat_embed_el
+    implementation libraries.jackson_core
+    implementation libraries.jackson_databind
+    implementation libraries.snakeyaml
+    implementation libraries.spring_security_web
+    implementation libraries.spring_security_config
+    implementation libraries.apache_commons_lang3
+    implementation libraries.bcprov;
+    implementation libraries.bcpkix;
+
+    implementation libraries.spring_aop
+    implementation libraries.spring_beans
+    implementation libraries.spring_context
+    implementation libraries.spring_core
+    implementation libraries.spring_expression
+    implementation libraries.spring_web
+    implementation libraries.spring_webmvc
+
+    compileOnly libraries.javax_servlet_api
+    compileOnly libraries.lombok
+    annotationProcessor libraries.lombok
+
+    testImplementation libraries.mockito_core
+    testImplementation libraries.spring_mock_mvc
+    testImplementation libraries.spring_boot_starter_test
+    testImplementation libraries.json_smart
+
+    testCompileOnly libraries.lombok
+    testImplementation libraries.gson
+    testAnnotationProcessor libraries.lombok
+}

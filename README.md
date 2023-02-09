@@ -1,13 +1,28 @@
+## API security layer with OAuth login 
 ## Table of Contents <!-- omit in toc -->
 
 
+- [About](#About-the-Platform)
 - [Installation](#installation)
 - [Prerequisites](#Prerequisites)
 - [Installing Node.js](#Installing-Node.js)
 - [Verifying the Installation](#Verifying-the-Installation)
 - [Initializing the Node.js Application](#Initializing-the-Node.js-Application)
 - [Running the Node.js Application](#Running-the-Node.js-Application)
-- 
+
+## About the Platform
+
+The API security layer was built to fulfill the following needs for all API and authentication requests used by the QuasaR-NGIN platform:
+- Authentication - The security layer must authenticate the users and validate their identities before allowing them to access the voice API.
+- Authorisation - The security layer must determine the level of access each user has and only allow them to perform actions they are authorized to perform.
+- Confidentiality - The security layer must protect the confidentiality of sensitive information, such as passwords, by encrypting data transmission.
+- Data privacy - The security layer must ensure that user data is kept private and is not shared with unauthorized third parties.
+- Risk assessment - The security layer must assess the potential risks associated with using the voice API and implement measures to minimize those risks.
+- Compliance - The security layer must comply with relevant data protection regulations, such as the EU General Data Protection Regulation (GDPR).
+
+
+To fulfil the requirements, an API security layer was built to handle the authentication, authorization, logging and reporting of all API requests made on the QuasaR-NGIN platform. 
+
 ## Installation
 
 ### Prerequisites
@@ -58,7 +73,6 @@ Once you have installed Node.js, you can verify the installation by running the 
 
 ``` 
 node -v 
-
 ```
 
 This will display the version of Node.js that you have installed on your system.

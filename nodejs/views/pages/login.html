@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+      <hr>
+      <p>Or login with:</p>
+      <a href="/auth/google" class="btn">Google</a>
+      
+    </div>
+    <script src="/scripts/scripts.js"></script>
+    <script src="/scripts/login.js"></script>
+  </body>
+</html>

@@ -2,14 +2,12 @@
 
 
 - [Installation](#installation)
-  - [Requirements](#requirements)
-  - [Install using pip](#install-using-pip)
-  - [Install using poetry](#install-using-poetry)
-- [Development](#development)
-- [Maintainer](#maintainer)
-- [Contributing](#contributing)
-- [License](#license)
-
+- [Prerequisites](#Prerequisites)
+- [Installing Node.js](#Installing-Node.js)
+- [Verifying the Installation](#Verifying-the-Installation)
+- [Initializing the Node.js Application](#Initializing-the-Node.js-Application)
+- [Running the Node.js Application](#Running-the-Node.js-Application)
+- 
 ## Installation
 
 ### Prerequisites

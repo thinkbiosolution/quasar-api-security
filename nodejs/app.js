@@ -3,9 +3,17 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const port = process.env.PORT || 3000;
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const productsRouter = require('./routes/products');
 
 const app = express();
-const port = process.env.PORT || 3000;
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/products', productsRouter);
 
 // Connect to the MongoDB database
 mongoose.connect('mongodb://localhost:27017/mydb', { useNewUrlParser: true });
